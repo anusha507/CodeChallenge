@@ -1,0 +1,109 @@
+.mat-accordion .mat-header-row {
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  border-bottom: none;
+}
+
+.mat-expansion-panel-header.mat-row {
+  border-bottom: none;
+}
+
+.mat-table {
+  display: block;
+}
+
+.mat-header-row {
+  min-height: 56px;
+  background-color: darkgrey;
+}
+
+.mat-row {
+  min-height: 48px;
+}
+
+.mat-row, .mat-header-row {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.mat-cell, .mat-header-cell {
+  flex: 1;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: center !important;
+}
+
+.mat-header-cell {
+  margin-left:30px;
+  color: beige;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  transform: translate(0%, -50%);
+  margin: 11px;
+  color: red;
+  float:right;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.notesContent{
+  float: left;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  width: 100%;
+}
+.notesText{
+  float: left;
+  width: 90%;
+}
+
+.even.ng-star-inserted .mat-expansion-panel-header{
+  background-color: lightgrey;
+}
+
+.odd.ng-star-inserted .mat-expansion-panel-header{
+  background-color: white;
+}
+
+.boxborder {
+  margin: 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  width:95%;
+  float: left;
+ }
+
+.detailsheader {
+  background-color: lightgrey;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.textpadding {
+padding-bottom: 20px;
+text-align: justify;
+}
+
+.headerfont{
+font-weight: bold;
+font-size:18px;
+}
+
+.boxborder div {
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.buttonadd {
+  float: right;
+  background-color: #117ACA;
+  color: white;
+  margin:0 15px 15px 0;
+}

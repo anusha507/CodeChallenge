@@ -1,0 +1,42 @@
+<mat-accordion [togglePosition]="'before'" displayMode="flat" class="mat-table">
+  <section matSort class="mat-elevation-z8 mat-header-row">
+    <span class="mat-header-cell">Request #</span>
+    <span class="mat-header-cell">Project Title</span>
+    <span class="mat-header-cell">Status</span>
+    <span class="mat-header-cell">Start Date</span>
+    <span class="mat-header-cell">Active</span>
+    <span class="mat-header-cell">Assigned To</span>
+    <span class="mat-header-cell">%Complete</span>
+  </section>
+
+  <mat-expansion-panel *ngFor="let item of data$ | async; let rowIndex=index;" class="{{rowIndex%2 ==0 ? 'even': 'odd'}}">
+    <mat-expansion-panel-header class="mat-row">
+      <span class="mat-cell">{{item.id}}</span>
+      <span class="mat-cell">{{item.title}}</span>
+      <span class="mat-cell">{{item.status}}</span>
+      <span class="mat-cell">{{item.start_date}}</span>
+
+      <span class="mat-cell">
+        <mat-slide-toggle [checked]='item.active'></mat-slide-toggle>
+      </span>
+      <span class="mat-cell">{{item.assignee}}</span>
+      <span class="mat-cell">{{item.percent_complete}}</span>
+    </mat-expansion-panel-header>
+    <div class ="boxborder">
+      <div class="detailsheader textpadding headerfont">Details/Notes</div>     
+      <div class="headerfont"> Summary </div>
+        <div class="textpadding "> {{item.details.summary}}</div>
+      <div class="headerfont"> Justification </div>
+        <div class="textpadding"> {{item.details.justification}}</div>
+      <div class="headerfont"> Notes: </div>
+          <div *ngFor = "let note of item.notes">
+              <div class="notesContent">
+              <span class="notesText"  >{{note.note}} </span>
+                <span class="close" (click)="deleteNote(item.id, note.id)">x</span>
+              </div>
+            </div>
+          <button mat-raised-button class="buttonadd" (click)="addNote(item.id)" >Add Note</button>
+    </div>
+  </mat-expansion-panel>
+
+</mat-accordion>

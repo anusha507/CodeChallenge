@@ -1,0 +1,26 @@
+<div *ngIf="data.action == 'add' ; then add ; else delete"></div>
+<ng-template #add>
+<h1 mat-dialog-title>Add Note</h1>
+    <div mat-dialog-content>
+        <label>Note:</label>
+        <br>
+        <textarea [(ngModel)]="data.noteDescription" rows="4" cols="50" name="comment">
+      You can note your updates here...</textarea>
+    </div>
+    <div>
+        <button mat-raised-button  class= "buttonmargin" (click)="cancel()">Cancel</button>
+        <button  mat-raised-button  class="buttonsave buttonmargin" (click)="addNote(data.id, data.noteDescription)" cdkFocusInitial>Save</button>
+    </div>
+</ng-template>
+<ng-template #delete>
+    <h1 mat-dialog-title>Confirm Delete</h1>
+    <div mat-dialog-content>
+        <div>
+            Are you sure you would like to delete this note?
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button  class= "buttonmargin"  (click)="cancel()">Cancel</button>
+        <button mat-raised-button class="buttondelete buttonmargin" (click)="deleteNote(data.id, data.noteId)" cdkFocusInitial>Delete</button>
+    </div>
+</ng-template>
